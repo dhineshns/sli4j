@@ -24,7 +24,7 @@
 
     <parent>
         <groupId>com.google.code.sli4j</groupId>
-        <artifactId>sli4j-sli4j</artifactId>
+        <artifactId>sli4j-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
