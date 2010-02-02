@@ -27,9 +27,9 @@ import com.google.inject.matcher.Matcher;
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class JuliLoggerModule extends AbstractLoggingModule<Logger> {
+public final class JuliLoggingModule extends AbstractLoggingModule<Logger> {
 
-    public JuliLoggerModule(Matcher<? super TypeLiteral<?>> matcher) {
+    public JuliLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
         super(matcher, new JuliLoggerListener());
     }
 
