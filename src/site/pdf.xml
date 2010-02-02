@@ -54,6 +54,7 @@
         <item name="Home" ref="index.html"/>
         <item name="JULI" ref="juli.html"/>
         <item name="Apache Commons Logging" ref="acl.html"/>
+        <item name="Apache log4j" ref="log4j.html"/>
     </toc>
 
     <cover>
