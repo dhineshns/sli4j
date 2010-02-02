@@ -38,6 +38,7 @@
     <body>
         <menu name="${project.name}">
             <item name="Home" href="index.html"/>
+            <item name="JULI" href="juli.html"/>
         </menu>
 
         <menu name="Miscellaneous">
