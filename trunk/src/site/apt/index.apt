@@ -38,6 +38,31 @@ Introduction
 
   * Simple Logging Facade for Java {{{http://www.slf4j.org/}slf4j}}.
 
+  The concept behind <<sli4j>> is that instead of creating Loggers by hand,
+  users can let <Guice> creates and injects them automagically, for example
+  instead writing:
+
+----------------------------------------
+import java.util.logging.Logger;
+...
+Logger logger = Logger.getLogger(this.getClass().getName());
+...
+----------------------------------------
+
+  users can easily code:
+
+----------------------------------------
+import java.util.logging.Logger;
+import com.google.inject.Inject;
+...
+@Inject
+Logger logger;
+...
+----------------------------------------
+
+  and nothing more! No setter methods are needed, but please notice Loggers must
+  no more be <<<final>>>.
+
 Before Coding...
 
   To set up your project, configure in your pom.xml the <<<repository>>>:
