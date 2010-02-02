@@ -17,7 +17,9 @@ package com.google.code.sli4j.juli;
 
 import java.util.logging.Logger;
 
-import com.google.code.sli4j.core.AbstractLoggerListener;
+import com.google.code.sli4j.core.AbstractLoggingModule;
+import com.google.inject.TypeLiteral;
+import com.google.inject.matcher.Matcher;
 
 /**
  * 
@@ -25,10 +27,10 @@ import com.google.code.sli4j.core.AbstractLoggerListener;
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class JuliLogListener extends AbstractLoggerListener<Logger> {
+public final class JuliLoggerModule extends AbstractLoggingModule<Logger> {
 
-    public JuliLogListener() {
-        super(JuliLogInjector.class);
+    public JuliLoggerModule(Matcher<? super TypeLiteral<?>> matcher) {
+        super(matcher, new JuliLoggerListener());
     }
 
 }
