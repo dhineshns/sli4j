@@ -52,6 +52,7 @@
 
     <toc name="Table of Contents">
         <item name="Home" ref="index.html"/>
+        <item name="JULI" ref="juli.html"/>
     </toc>
 
     <cover>
@@ -69,6 +70,16 @@
                 <country>Italy</country>
                 <companyName>Sourcesense Srl</companyName>
                 <city>Rome</city>
+            </author>
+
+            <author>
+                <name>Marco Speranza</name>
+                <lastName>Speranza</lastName>
+                <firstName>Marco</firstName>
+                <initials>MS</initials>
+                <country>Italy</country>
+                <companyName>T.R.S. SpA</companyName>
+                <city>L'Aquila</city>
             </author>
         </authors>
     </cover>
