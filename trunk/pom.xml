@@ -309,6 +309,7 @@
         <module>log4j</module>
         <module>slf4j-nop</module>
         <module>slf4j-simple</module>
+        <module>slf4j-jcl</module>
     </modules>
 
 </project>
