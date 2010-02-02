@@ -36,7 +36,8 @@ Introduction
 
   * Apache {{{http://logging.apache.org/log4j/}log4j}};
 
-  * Simple Logging Facade for Java {{{http://www.slf4j.org/}slf4j}}.
+  * Simple Logging Facade for Java {{{http://www.slf4j.org/}slf4j}}, with
+    {{{http://logback.qos.ch/}Logback}} support.
 
   The concept behind <<sli4j>> is that instead of creating Loggers by hand,
   users can let <Guice> creates and injects them automagically, for example
