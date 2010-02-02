@@ -310,6 +310,7 @@
         <module>core</module>
         <module>juli</module>
         <module>commons-logging</module>
+        <module>log4j</module>
     </modules>
 
 </project>
