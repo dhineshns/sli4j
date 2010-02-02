@@ -13,14 +13,12 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.commonslogging;
-
-import java.lang.reflect.Field;
+package com.google.code.sli4j.acl;
 
 import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import com.google.code.sli4j.core.AbstractLoggerInjector;
+import com.google.code.sli4j.core.AbstractLoggerListener;
 
 /**
  * 
@@ -28,18 +26,10 @@ import com.google.code.sli4j.core.AbstractLoggerInjector;
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class CommonLoggingInjector extends AbstractLoggerInjector<Log> {
+public final class ACLLoggerListener extends AbstractLoggerListener<Log> {
 
-    public CommonLoggingInjector(Field field) {
-        super(field);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected Log createLogger(Class<?> klass) {
-        return LogFactory.getLog(klass);
+    public <LI extends AbstractLoggerInjector<Log>> ACLLoggerListener() {
+        super(ACLLoggerInjector.class);
     }
 
 }
