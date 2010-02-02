@@ -308,6 +308,7 @@
         <module>commons-logging</module>
         <module>log4j</module>
         <module>slf4j-nop</module>
+        <module>slf4j-simple</module>
     </modules>
 
 </project>
