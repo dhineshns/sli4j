@@ -25,13 +25,13 @@ import com.google.inject.matcher.Matcher;
  * @author Simone Tripodi
  * @version $Id$
  */
-public class AbstractLoggingModule extends AbstractModule {
+public class AbstractLoggingModule<L> extends AbstractModule {
 
     private final Matcher<? super TypeLiteral<?>> matcher;
 
-    private final AbstractLoggerListener<?> loggerListener;
+    private final AbstractLoggerListener<L> loggerListener;
 
-    public <LL extends AbstractLoggerListener<?>> AbstractLoggingModule(Matcher<? super TypeLiteral<?>> matcher, LL loggerListener) {
+    public <LL extends AbstractLoggerListener<L>> AbstractLoggingModule(Matcher<? super TypeLiteral<?>> matcher, LL loggerListener) {
         this.matcher = matcher;
         this.loggerListener = loggerListener;
     }
