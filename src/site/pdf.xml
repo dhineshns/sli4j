@@ -53,6 +53,7 @@
     <toc name="Table of Contents">
         <item name="Home" ref="index.html"/>
         <item name="JULI" ref="juli.html"/>
+        <item name="Apache Commons Logging" ref="acl.html"/>
     </toc>
 
     <cover>
