@@ -17,8 +17,9 @@ package com.google.code.sli4j.log4j;
 
 import org.apache.log4j.Logger;
 
-import com.google.code.sli4j.core.AbstractLoggerInjector;
-import com.google.code.sli4j.core.AbstractLoggerListener;
+import com.google.code.sli4j.core.AbstractLoggingModule;
+import com.google.inject.TypeLiteral;
+import com.google.inject.matcher.Matcher;
 
 /**
  * 
@@ -26,15 +27,10 @@ import com.google.code.sli4j.core.AbstractLoggerListener;
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class Log4jLoggerListener extends AbstractLoggerListener<Logger> {
+public final class Log4jLoggingModule extends AbstractLoggingModule<Logger> {
 
-    /**
-     * 
-     *
-     * @param <LI>
-     */
-    public <LI extends AbstractLoggerInjector<Logger>> Log4jLoggerListener() {
-        super(Log4JLoggerInjector.class);
+    public Log4jLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
+        super(matcher, new Log4jLoggerListener());
     }
 
 }

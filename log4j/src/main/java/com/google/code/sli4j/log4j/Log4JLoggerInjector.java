@@ -27,14 +27,14 @@ import com.google.code.sli4j.core.AbstractLoggerInjector;
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class Log4JLogInjector extends AbstractLoggerInjector<Logger> {
+public final class Log4JLoggerInjector extends AbstractLoggerInjector<Logger> {
 
     /**
      * 
      *
      * @param field
      */
-    public Log4JLogInjector(Field field) {
+    public Log4JLoggerInjector(Field field) {
         super(field);
     }
 
