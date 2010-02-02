@@ -324,6 +324,7 @@
     <modules>
         <module>core</module>
         <module>juli</module>
+        <module>commons-logging</module>
     </modules>
 
 </project>
