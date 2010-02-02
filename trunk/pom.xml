@@ -311,6 +311,7 @@
         <module>slf4j-simple</module>
         <module>slf4j-jcl</module>
         <module>slf4j-jdk14</module>
+        <module>slf4j-log4j</module>
     </modules>
 
 </project>
