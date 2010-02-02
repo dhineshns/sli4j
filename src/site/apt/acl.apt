@@ -31,14 +31,12 @@ Apache Commons Logging
   the following dependency in the <<<pom.xml>>>:
 
 ----------------------------------------
-...
 <dependency>
     <groupId>com.google.code.sli4j</groupId>
     <artifactId>sli4j-commons-logging</artifactId>
     <version>XX.XX</version>
     <scope>compile</scope>
 </dependency>
-...
 ----------------------------------------
 
   then, annotate with <<<@com.google.inject.Inject>>> the
