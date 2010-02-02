@@ -26,4 +26,47 @@
 
 JULI - Java Utils Logging
 
-  
+  Users that want to use the <<<java.util.logging>>> package and let <Guice>
+  injects automagically <<<java.util.logging.Logger>>> instances, have to add
+  the following dependency in the <<<pom.xml>>>:
+
+----------------------------------------
+...
+<dependency>
+    <groupId>com.google.code.sli4j</groupId>
+    <artifactId>sli4j-juli</artifactId>
+    <version>XX.XX</version>
+    <scope>compile</scope>
+</dependency>
+...
+----------------------------------------
+
+  then, annotate with <<<@com.google.inject.Inject>>> the
+  <<<java.util.logging.Logger>>> references:
+
+----------------------------------------
+import java.util.logging.Logger;
+import com.google.inject.Inject;
+...
+@Inject
+Logger logger;
+...
+----------------------------------------
+
+  and finally, when creating the <<<com.google.inject.Injector>>>, add the
+  <<<com.google.code.sli4j.juli.JuliLoggingModule>>> module:
+
+----------------------------------------
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
+import com.google.code.sli4j.juli.JuliLoggingModule;
+
+...
+
+Injector injector = Guice.createInjector(new JuliLoggingModule(),
+    ...
+);
+----------------------------------------
+
+  and the magic happens :)
