@@ -13,12 +13,13 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.commonslogging;
+package com.google.code.sli4j.acl;
 
 import org.apache.commons.logging.Log;
 
-import com.google.code.sli4j.core.AbstractLoggerInjector;
-import com.google.code.sli4j.core.AbstractLoggerListener;
+import com.google.code.sli4j.core.AbstractLoggingModule;
+import com.google.inject.TypeLiteral;
+import com.google.inject.matcher.Matcher;
 
 /**
  * 
@@ -26,10 +27,10 @@ import com.google.code.sli4j.core.AbstractLoggerListener;
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class CommonLoggingListener extends AbstractLoggerListener<Log> {
+public final class ACLLoggingModule extends AbstractLoggingModule<Log> {
 
-    public <LI extends AbstractLoggerInjector<Log>> CommonLoggingListener() {
-        super(CommonLoggingInjector.class);
+    public ACLLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
+        super(matcher, new ACLLoggerListener());
     }
 
 }
