@@ -15,10 +15,9 @@
  */
 package com.google.code.sli4j.juli;
 
-import java.lang.reflect.Field;
 import java.util.logging.Logger;
 
-import com.google.code.sli4j.core.AbstractLoggerInjector;
+import com.google.code.sli4j.core.AbstractLoggerListener;
 
 /**
  * 
@@ -26,23 +25,10 @@ import com.google.code.sli4j.core.AbstractLoggerInjector;
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class JuliLogInjector extends AbstractLoggerInjector<Logger> {
+public final class JuliLoggerListener extends AbstractLoggerListener<Logger> {
 
-    /**
-     * 
-     *
-     * @param field
-     */
-    public JuliLogInjector(Field field) {
-        super(field);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected Logger createLogger(Class<?> klass) {
-        return Logger.getLogger(klass.getName());
+    public JuliLoggerListener() {
+        super(JuliLoggerInjector.class);
     }
 
 }
