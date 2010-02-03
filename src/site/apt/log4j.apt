@@ -52,17 +52,20 @@ Logger logger;
 ----------------------------------------
 
   and finally, when creating the <<<com.google.inject.Injector>>>, add the
-  <<<com.google.code.sli4j.log4j.Log4jLoggingModule>>> module:
+  <<<com.google.code.sli4j.log4j.Log4jLoggingModule>>> module; please take note
+  that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
+  for whom the logging injection has to be applied:
 
 ----------------------------------------
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
 import com.google.code.sli4j.log4j.Log4jLoggingModule;
+import com.google.inject.matcher.Matchers;
 
 ...
 
-Injector injector = Guice.createInjector(new Log4jLoggingModule(),
+Injector injector = Guice.createInjector(new Log4jLoggingModule(Matchers.any()),
     ...
 );
 ----------------------------------------
