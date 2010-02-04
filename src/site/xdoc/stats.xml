@@ -18,7 +18,6 @@
 <!--
     author: Simone Tripodi
     version: $Id$
-    TODO fix the project id
 -->
 <document>
     <properties>
@@ -29,19 +28,19 @@
     <body>
         <section name="Project Stats">
             <subsection name="Basic stats">
-                <script type="text/javascript" src="http://www.ohloh.net/p/480518/widgets/project_basic_stats.js"></script>
+                <script type="text/javascript" src="http://www.ohloh.net/p/480918/widgets/project_basic_stats.js"></script>
             </subsection>
 
             <subsection name="Cocomo">
-                <script type="text/javascript" src="http://www.ohloh.net/p/480518/widgets/project_cocomo.js"></script>
+                <script type="text/javascript" src="http://www.ohloh.net/p/480918/widgets/project_cocomo.js"></script>
             </subsection>
 
             <subsection name="Factoids">
-                <script type="text/javascript" src="http://www.ohloh.net/p/480518/widgets/project_factoids.js"></script>
+                <script type="text/javascript" src="http://www.ohloh.net/p/480918/widgets/project_factoids.js"></script>
             </subsection>
 
             <subsection name="Languages">
-                <script type="text/javascript" src="http://www.ohloh.net/p/480518/widgets/project_languages.js"></script>
+                <script type="text/javascript" src="http://www.ohloh.net/p/480918/widgets/project_languages.js"></script>
             </subsection>
         </section>
     </body>
