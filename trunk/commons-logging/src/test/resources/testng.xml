@@ -20,6 +20,6 @@
     author: Simone Tripodi (simone.tripodi)
     version: $Id$
 -->
-<suite name="commons-logging">
+<suite name="sli4j-acl">
 
 </suite>
