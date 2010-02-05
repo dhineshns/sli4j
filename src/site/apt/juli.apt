@@ -39,14 +39,14 @@ JULI - Java Utils Logging
 </dependency>
 ----------------------------------------
 
-  then, annotate with <<<@com.google.inject.Inject>>> the
+  then, annotate with <<<@com.google.code.sli4j.InjectLogger>>> the
   <<<java.util.logging.Logger>>> references:
 
 ----------------------------------------
 import java.util.logging.Logger;
-import com.google.inject.Inject;
+import com.google.code.sli4j.InjectLogger;
 ...
-@Inject
+@InjectLogger
 Logger logger;
 ...
 ----------------------------------------
