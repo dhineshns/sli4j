@@ -16,6 +16,7 @@
 package com.google.code.sli4j.testfw;
 
 import com.google.code.sli4j.core.AbstractLoggingModule;
+import com.google.code.sli4j.core.LoggerInject;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
@@ -29,7 +30,7 @@ import com.google.inject.Injector;
  */
 public abstract class AbstractLoggerInectionTestCase<L> {
 
-    @Inject
+    @LoggerInject
     private L logger;
 
     @Inject
