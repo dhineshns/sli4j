@@ -30,7 +30,7 @@ import com.google.inject.spi.TypeListener;
  * @author Simone Tripodi
  * @version $Id$
  */
-public abstract class AbstractLoggerListener<L> implements TypeListener {
+public abstract class AbstractLoggerListener<L> extends TypeLiteral<L> implements TypeListener {
 
     /**
      * 
@@ -48,7 +48,7 @@ public abstract class AbstractLoggerListener<L> implements TypeListener {
      * @param logInjectorClass
      */
     public <LI extends AbstractLoggerInjector<L>> AbstractLoggerListener(Class<LI> logInjectorClass) {
-        this.loggerClass = MoreTypes.getRawType(TypeLiteral.get(this.getClass()).getType());
+        this.loggerClass = MoreTypes.getRawType(this.getType());
         try {
             this.logInjectorConstructor = logInjectorClass.getConstructor(Field.class);
         } catch (SecurityException e) {
