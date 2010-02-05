@@ -88,7 +88,7 @@ public abstract class AbstractLoggerListener<L> extends TypeLiteral<L> implement
 
         for (Field field : klass.getDeclaredFields()) {
             if (this.loggerClass == field.getType()
-                    && field.isAnnotationPresent(LoggerInject.class)) {
+                    && field.isAnnotationPresent(InjectLogger.class)) {
                 try {
                     encounter.register((MembersInjector<? super I>) this.logInjectorConstructor.newInstance(field));
                 } catch (Exception e) {

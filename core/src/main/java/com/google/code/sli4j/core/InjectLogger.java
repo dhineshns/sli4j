@@ -33,6 +33,6 @@ import com.google.inject.BindingAnnotation;
 @BindingAnnotation
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface LoggerInject {
+public @interface InjectLogger {
 
 }
