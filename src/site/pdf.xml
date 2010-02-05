@@ -56,6 +56,7 @@
         <item name="Apache Commons Logging" ref="acl.html"/>
         <item name="Apache log4j" ref="log4j.html"/>
         <item name="Simple Logging Facade for Java" ref="slf4j.html"/>
+        <item name="Extend sli4j" ref="extend.html"/>
     </toc>
 
     <cover>

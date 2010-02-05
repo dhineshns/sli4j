@@ -1,0 +1,102 @@
+                                    ------
+                                    Extend sli4j
+                                    ------
+                                    Simone Tripodi
+                                    ------
+                                     2009
+
+~~
+~~   Copyright 2010 The sli4j Team
+~~
+~~   Licensed under the Apache License, Version 2.0 (the "License");
+~~   you may not use this file except in compliance with the License.
+~~   You may obtain a copy of the License at
+~~
+~~       http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~   Unless required by applicable law or agreed to in writing, software
+~~   distributed under the License is distributed on an "AS IS" BASIS,
+~~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~~   See the License for the specific language governing permissions and
+~~   limitations under the License.
+~~
+
+~~author: Simone Tripodi
+~~version: $Id$
+
+Extend sli4j
+
+  Exigent users that have the need to integrate not already supported logging
+  framework, can easily do it by following the listed steps:
+
+  [[1]] add the <<<core>>> dependency in the <<<pom.xml>>> if not already done:
+
+----------------------------------------
+<dependency>
+    <groupId>com.google.code.sli4j</groupId>
+    <artifactId>sli4j-core</artifactId>
+    <version>XX.XX</version>
+    <scope>compile</scope>
+</dependency>
+----------------------------------------
+
+  [[2]] Extend the <<<com.google.code.sli4j.core.AbstractLoggerInjector>>>:
+
+----------------------------------------
+import java.lang.reflect.Field;
+
+import com.acme.MyLogger;
+import com.acme.MyLoggerFactory;
+
+import com.google.code.sli4j.core.AbstractLoggerInjector;
+
+public final class AcmeLoggerInjector extends AbstractLoggerInjector<MyLogger> {
+
+    public AcmeLoggerInjector(Field field) {
+        super(field);
+    }
+
+    @Override
+    protected MyLogger createLogger(Class<?> klass) {
+        return MyLoggerFactory.getLog(klass);
+    }
+
+}
+----------------------------------------
+
+  [[3]] Extend the <<<com.google.code.sli4j.core.AbstractLoggerListener>>>:
+
+----------------------------------------
+import com.acme.MyLogger;
+
+import com.google.code.sli4j.core.AbstractLoggerInjector;
+import com.google.code.sli4j.core.AbstractLoggerListener;
+
+public final class AcmeLoggerListener extends AbstractLoggerListener<MyLogger> {
+
+    public <LI extends AbstractLoggerInjector<MyLogger>> AcmeLoggerListener() {
+        super(AcmeLoggerInjector.class);
+    }
+
+}
+----------------------------------------
+
+  [[4]] Extend the <<<com.google.code.sli4j.core.AbstractLoggerListener>>>:
+
+----------------------------------------
+import com.acme.MyLogger;
+
+import com.google.code.sli4j.core.AbstractLoggingModule;
+import com.google.inject.TypeLiteral;
+import com.google.inject.matcher.Matcher;
+
+public final class AcmeLoggingModule extends AbstractLoggingModule<MyLogger> {
+
+    public ACLLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
+        super(matcher, new AcmeLoggerListener());
+    }
+
+}
+----------------------------------------
+
+  [[5]] Plug your new logging module and enjoy ;)
