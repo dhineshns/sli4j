@@ -92,7 +92,11 @@ public abstract class AbstractLoggerListener<L> implements TypeListener {
                 try {
                     encounter.register((MembersInjector<? super I>) this.logInjectorConstructor.newInstance(field));
                 } catch (Exception e) {
-                    throw new RuntimeException("", e);
+                    throw new RuntimeException("Impossible to register '"
+                            + this.logInjectorConstructor.getName()
+                            + "' for field '"
+                            + field
+                            + "', see nested exception", e);
                 }
             }
         }
