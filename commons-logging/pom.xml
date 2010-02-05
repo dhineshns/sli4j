@@ -30,7 +30,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code.sli4j</groupId>
-    <artifactId>sli4j-commons-logging</artifactId>
+    <artifactId>sli4j-acl</artifactId>
     <packaging>jar</packaging>
     <version>${parent.version}</version>
     <name>Apache Commons Logging</name>
