@@ -16,7 +16,6 @@
 package com.google.code.sli4j.testfw;
 
 import com.google.code.sli4j.core.AbstractLoggingModule;
-import com.google.code.sli4j.core.LoggerInject;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
@@ -30,9 +29,6 @@ import com.google.inject.Injector;
  */
 public abstract class AbstractLoggerInectionTestCase<L> {
 
-    @LoggerInject
-    private L logger;
-
     @Inject
     private Service service;
 
@@ -40,7 +36,7 @@ public abstract class AbstractLoggerInectionTestCase<L> {
         this.service = service;
     }
 
-    public <LM extends AbstractLoggingModule<L>> void injectAndVerify(LM logginModule) {
+    public <LM extends AbstractLoggingModule<L>> void setUp(LM logginModule) {
         Injector injector = Guice.createInjector(logginModule, new AbstractModule() {
             @Override
             protected void configure() {
@@ -48,8 +44,10 @@ public abstract class AbstractLoggerInectionTestCase<L> {
             }
         });
         injector.injectMembers(this);
+    }
 
-        assert this.logger != null;
+    public void injectAndVerify(L logger) {
+        assert logger != null;
         assert this.service != null;
     }
 
