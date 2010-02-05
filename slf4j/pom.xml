@@ -33,8 +33,8 @@
     <artifactId>sli4j-slf4j</artifactId>
     <packaging>jar</packaging>
     <version>${parent.version}</version>
-    <name>slf4j-logback</name>
-    <description>sli4j slf4j-logback</description>
+    <name>slf4j-slf4j</name>
+    <description>sli4j slf4j</description>
 
     <dependencies>
         <dependency>
