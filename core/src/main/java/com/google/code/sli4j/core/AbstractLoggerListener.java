@@ -18,6 +18,7 @@ package com.google.code.sli4j.core;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
+import com.google.code.sli4j.InjectLogger;
 import com.google.inject.MembersInjector;
 import com.google.inject.TypeLiteral;
 import com.google.inject.internal.MoreTypes;

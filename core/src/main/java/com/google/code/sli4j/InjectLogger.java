@@ -13,7 +13,7 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.core;
+package com.google.code.sli4j;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
