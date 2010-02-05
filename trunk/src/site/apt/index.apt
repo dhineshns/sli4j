@@ -54,9 +54,9 @@ Logger logger = Logger.getLogger(this.getClass().getName());
 
 ----------------------------------------
 import java.util.logging.Logger;
-import com.google.inject.Inject;
+import com.google.code.sli4j.InjectLogger;
 ...
-@Inject
+@InjectLogger
 Logger logger;
 ...
 ----------------------------------------
@@ -79,6 +79,17 @@ Before Coding...
     </repository>
     ...
 </repositories>
+----------------------------------------
+
+  then add the following dependency:
+
+----------------------------------------
+<dependency>
+    <groupId>com.google.code.sli4j</groupId>
+    <artifactId>sli4j-core</artifactId>
+    <version>XX.XX</version>
+    <scope>compile</scope>
+</dependency>
 ----------------------------------------
 
 Acknowledgements

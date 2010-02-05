@@ -39,14 +39,14 @@ Apache Commons Logging
 </dependency>
 ----------------------------------------
 
-  then, annotate with <<<@com.google.inject.Inject>>> the
+  then, annotate with <<<@com.google.code.sli4j.InjectLogger>>> the
   <<<org.apache.commons.logging.Log>>> references:
 
 ----------------------------------------
-import com.google.inject.Inject;
+import com.google.code.sli4j.InjectLogger;
 import org.apache.commons.logging.Log;
 ...
-@Inject
+@InjectLogger
 Log log;
 ...
 ----------------------------------------

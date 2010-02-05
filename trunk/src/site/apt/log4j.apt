@@ -39,14 +39,14 @@ Apache log4j
 </dependency>
 ----------------------------------------
 
-  then, annotate with <<<@com.google.inject.Inject>>> the
+  then, annotate with <<<@com.google.code.sli4j.InjectLogger>>> the
   <<<org.apache.log4j.Logger>>> references:
 
 ----------------------------------------
 import com.google.inject.Inject;
-import org.apache.log4j.Logger;
+import com.google.code.sli4j.InjectLogger;
 ...
-@Inject
+@InjectLogger
 Logger logger;
 ...
 ----------------------------------------
