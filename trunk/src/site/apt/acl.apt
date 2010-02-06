@@ -33,7 +33,7 @@ Apache Commons Logging
 ----------------------------------------
 <dependency>
     <groupId>com.google.code.sli4j</groupId>
-    <artifactId>sli4j-commons-logging</artifactId>
+    <artifactId>sli4j-acl</artifactId>
     <version>XX.XX</version>
     <scope>compile</scope>
 </dependency>
