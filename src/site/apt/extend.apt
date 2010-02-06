@@ -40,7 +40,9 @@ Extend sli4j
 </dependency>
 ----------------------------------------
 
-  [[2]] Extend the <<<com.google.code.sli4j.core.AbstractLoggerInjector>>>:
+  [[2]] Extend the <<<com.google.code.sli4j.core.AbstractLoggerInjector>>>,
+        that's the class responsibile of creating and injecting the desired
+        Logger, specifying the Logger type:
 
 ----------------------------------------
 import java.lang.reflect.Field;
@@ -64,24 +66,9 @@ public final class AcmeLoggerInjector extends AbstractLoggerInjector<MyLogger> {
 }
 ----------------------------------------
 
-  [[3]] Extend the <<<com.google.code.sli4j.core.AbstractLoggerListener>>>:
-
-----------------------------------------
-import com.acme.MyLogger;
-
-import com.google.code.sli4j.core.AbstractLoggerInjector;
-import com.google.code.sli4j.core.AbstractLoggerListener;
-
-public final class AcmeLoggerListener extends AbstractLoggerListener<MyLogger> {
-
-    public <LI extends AbstractLoggerInjector<MyLogger>> AcmeLoggerListener() {
-        super(AcmeLoggerInjector.class);
-    }
-
-}
-----------------------------------------
-
-  [[4]] Extend the <<<com.google.code.sli4j.core.AbstractLoggerListener>>>:
+  [[3]] Extend the <<<com.google.code.sli4j.core.AbstractLoggingModule>>>,
+        specifying the Logger type and the
+        <<<com.google.code.sli4j.core.AbstractLoggerInjector>>> type:
 
 ----------------------------------------
 import com.acme.MyLogger;
@@ -93,10 +80,10 @@ import com.google.inject.matcher.Matcher;
 public final class AcmeLoggingModule extends AbstractLoggingModule<MyLogger> {
 
     public ACLLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, new AcmeLoggerListener());
+        super(matcher, AcmeLoggerInjector.class);
     }
 
 }
 ----------------------------------------
 
-  [[5]] Plug your new logging module and enjoy ;)
+  [[4]] Plug your new logging module and enjoy ;)
