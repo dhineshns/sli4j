@@ -39,19 +39,7 @@ JULI - Java Utils Logging
 </dependency>
 ----------------------------------------
 
-  then, annotate with <<<@com.google.code.sli4j.InjectLogger>>> the
-  <<<java.util.logging.Logger>>> references:
-
-----------------------------------------
-import java.util.logging.Logger;
-import com.google.code.sli4j.InjectLogger;
-...
-@InjectLogger
-Logger logger;
-...
-----------------------------------------
-
-  and finally, when creating the <<<com.google.inject.Injector>>>, add the
+  then, when creating the <<<com.google.inject.Injector>>>, add the
   <<<com.google.code.sli4j.juli.JuliLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:

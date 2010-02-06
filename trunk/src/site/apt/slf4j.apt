@@ -39,19 +39,7 @@ Simple Logging Facade for Java (SLF4J)
 </dependency>
 ----------------------------------------
 
-  then, annotate with <<<@com.google.code.sli4j.InjectLogger>>> the
-  <<<org.slf4j.Logger>>> references:
-
-----------------------------------------
-import com.google.code.sli4j.InjectLogger;
-import org.slf4j.Logger;
-...
-@InjectLogger
-Logger logger;
-...
-----------------------------------------
-
-  and finally, when creating the <<<com.google.inject.Injector>>>, add the
+  then, when creating the <<<com.google.inject.Injector>>>, add the
   <<<com.google.code.sli4j.slf4j.Slf4jLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:

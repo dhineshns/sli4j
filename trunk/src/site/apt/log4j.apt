@@ -39,19 +39,7 @@ Apache log4j
 </dependency>
 ----------------------------------------
 
-  then, annotate with <<<@com.google.code.sli4j.InjectLogger>>> the
-  <<<org.apache.log4j.Logger>>> references:
-
-----------------------------------------
-import com.google.inject.Inject;
-import com.google.code.sli4j.InjectLogger;
-...
-@InjectLogger
-Logger logger;
-...
-----------------------------------------
-
-  and finally, when creating the <<<com.google.inject.Injector>>>, add the
+  then, when creating the <<<com.google.inject.Injector>>>, add the
   <<<com.google.code.sli4j.log4j.Log4jLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:
