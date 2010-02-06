@@ -29,7 +29,7 @@ Extend sli4j
   Exigent users that have the need to integrate not already supported logging
   framework, can easily do it by following the listed steps:
 
-  [[1]] add the <<<core>>> dependency in the <<<pom.xml>>> if not already done:
+  [[1]] add the <<<core>>> dependency in the <<<pom.xml>>>:
 
 ----------------------------------------
 <dependency>

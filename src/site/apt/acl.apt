@@ -39,19 +39,7 @@ Apache Commons Logging
 </dependency>
 ----------------------------------------
 
-  then, annotate with <<<@com.google.code.sli4j.InjectLogger>>> the
-  <<<org.apache.commons.logging.Log>>> references:
-
-----------------------------------------
-import com.google.code.sli4j.InjectLogger;
-import org.apache.commons.logging.Log;
-...
-@InjectLogger
-Log log;
-...
-----------------------------------------
-
-  and finally, when creating the <<<com.google.inject.Injector>>>, add the
+  then, when creating the <<<com.google.inject.Injector>>>, add the
   <<<com.google.code.sli4j.acl.ACLLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:

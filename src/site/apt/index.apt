@@ -54,15 +54,14 @@ Logger logger = Logger.getLogger(this.getClass().getName());
 
 ----------------------------------------
 import java.util.logging.Logger;
-import com.google.code.sli4j.InjectLogger;
 ...
-@InjectLogger
 Logger logger;
 ...
 ----------------------------------------
 
-  and nothing more! No setter methods are needed, but please notice Loggers must
-  no more be <<<final>>>.
+  and <<nothing>> more! <<No>> setter methods are needed, <<no>> special annotations,
+  just declare it and let <sli4j> doing the rest, <<<final>>> and already set
+  Loggers will be skipped and <sli4j> won't try to override them at all.
 
 Before Coding...
 
@@ -79,17 +78,6 @@ Before Coding...
     </repository>
     ...
 </repositories>
-----------------------------------------
-
-  then add the following dependency:
-
-----------------------------------------
-<dependency>
-    <groupId>com.google.code.sli4j</groupId>
-    <artifactId>sli4j-core</artifactId>
-    <version>XX.XX</version>
-    <scope>compile</scope>
-</dependency>
 ----------------------------------------
 
 Acknowledgements
