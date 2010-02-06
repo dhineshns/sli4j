@@ -19,7 +19,6 @@ import org.apache.commons.logging.Log;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.google.code.sli4j.InjectLogger;
 import com.google.code.sli4j.testfw.AbstractLoggerInectionTestCase;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
@@ -32,7 +31,6 @@ import com.google.inject.matcher.Matchers;
  */
 public final class ACLLoggingTestCase extends AbstractLoggerInectionTestCase<Log> {
 
-    @InjectLogger
     private Log logger;
 
     @BeforeTest

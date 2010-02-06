@@ -18,7 +18,6 @@ package com.google.code.sli4j.core;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
-import com.google.code.sli4j.InjectLogger;
 import com.google.inject.MembersInjector;
 import com.google.inject.TypeLiteral;
 import com.google.inject.internal.MoreTypes;
@@ -88,8 +87,7 @@ public abstract class AbstractLoggerListener<L> extends TypeLiteral<L> implement
         }
 
         for (Field field : klass.getDeclaredFields()) {
-            if (this.loggerClass == field.getType()
-                    && field.isAnnotationPresent(InjectLogger.class)) {
+            if (this.loggerClass == field.getType()) {
                 try {
                     encounter.register((MembersInjector<? super I>) this.logInjectorConstructor.newInstance(field));
                 } catch (Exception e) {
