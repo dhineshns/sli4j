@@ -20,7 +20,6 @@ import java.util.logging.Logger;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.google.code.sli4j.InjectLogger;
 import com.google.code.sli4j.testfw.AbstractLoggerInectionTestCase;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matchers;
@@ -33,7 +32,6 @@ import com.google.inject.matcher.Matchers;
  */
 public final class JuliLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 
-    @InjectLogger
     private Logger logger;
 
     @BeforeTest

@@ -48,7 +48,9 @@ public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
         boolean wasAccessible = this.field.isAccessible();
         this.field.setAccessible(true);
         try {
-            this.field.set(target, this.createLogger(this.field.getType()));
+            if (this.field.get(target) == null) {
+                this.field.set(target, this.createLogger(this.field.getType()));
+            }
         } catch (Exception e) {
             throw new RuntimeException("Impossible to set logger to field '"
                     + field
