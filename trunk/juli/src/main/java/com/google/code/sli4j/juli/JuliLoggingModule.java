@@ -30,7 +30,7 @@ import com.google.inject.matcher.Matcher;
 public final class JuliLoggingModule extends AbstractLoggingModule<Logger> {
 
     public JuliLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, new JuliLoggerListener());
+        super(matcher, JuliLoggerInjector.class);
     }
 
 }

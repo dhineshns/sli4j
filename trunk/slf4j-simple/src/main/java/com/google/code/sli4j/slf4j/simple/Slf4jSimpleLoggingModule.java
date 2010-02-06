@@ -30,7 +30,7 @@ import com.google.inject.matcher.Matcher;
 public final class Slf4jSimpleLoggingModule extends AbstractLoggingModule<Logger> {
 
     public Slf4jSimpleLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, new Slf4jSimpleLoggerListener());
+        super(matcher, Slf4jSimpleLoggerInjector.class);
     }
 
 }

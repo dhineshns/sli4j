@@ -15,9 +15,17 @@
  */
 package com.google.code.sli4j.core;
 
-import com.google.inject.AbstractModule;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+
+import com.google.inject.Binder;
+import com.google.inject.MembersInjector;
+import com.google.inject.Module;
 import com.google.inject.TypeLiteral;
+import com.google.inject.internal.MoreTypes;
 import com.google.inject.matcher.Matcher;
+import com.google.inject.spi.TypeEncounter;
+import com.google.inject.spi.TypeListener;
 
 /**
  * 
@@ -25,20 +33,92 @@ import com.google.inject.matcher.Matcher;
  * @author Simone Tripodi
  * @version $Id$
  */
-public class AbstractLoggingModule<L> extends AbstractModule {
+public class AbstractLoggingModule<L> extends TypeLiteral<L> implements Module, TypeListener {
 
+    /**
+     * 
+     */
     private final Matcher<? super TypeLiteral<?>> matcher;
 
-    private final AbstractLoggerListener<L> loggerListener;
+    /**
+     * 
+     */
+    private final Class<?> loggerClass;
 
-    public <LL extends AbstractLoggerListener<L>> AbstractLoggingModule(Matcher<? super TypeLiteral<?>> matcher, LL loggerListener) {
+    /**
+     * 
+     */
+    private final Constructor<? extends MembersInjector<L>> logInjectorConstructor;
+
+    /**
+     * 
+     *
+     * @param <LI>
+     * @param matcher
+     * @param logInjectorClass
+     */
+    public <LI extends AbstractLoggerInjector<L>> AbstractLoggingModule(Matcher<? super TypeLiteral<?>> matcher, Class<LI> logInjectorClass) {
         this.matcher = matcher;
-        this.loggerListener = loggerListener;
+        this.loggerClass = MoreTypes.getRawType(this.getType());
+        try {
+            this.logInjectorConstructor = logInjectorClass.getConstructor(Field.class);
+        } catch (SecurityException e) {
+            throw new RuntimeException("Impossible to access to '"
+                    + logInjectorClass.getName()
+                    + "("
+                    + Field.class.getName()
+                    + ")' public constructor due to security violation", e);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException("Class '"
+                    + logInjectorClass.getName()
+                    + "' doesn't have a public construcor with <"
+                    + Field.class.getName()
+                    + "> parameter type", e);
+        }
     }
 
-    @Override
-    protected final void configure() {
-        this.bindListener(this.matcher, this.loggerListener);
+    /**
+     * {@inheritDoc}
+     */
+    public final void configure(Binder binder) {
+        binder.bindListener(this.matcher, this);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public final <I> void hear(TypeLiteral<I> type, TypeEncounter<I> encounter) {
+        this.hear(type.getRawType(), encounter);
+    }
+
+    /**
+     * 
+     *
+     * @param <I>
+     * @param klass
+     * @param encounter
+     */
+    @SuppressWarnings("unchecked")
+    private <I> void hear(Class<?> klass, TypeEncounter<I> encounter) {
+        if (Object.class == klass) {
+            return;
+        }
+
+        for (Field field : klass.getDeclaredFields()) {
+            if (this.loggerClass == field.getType()) {
+                try {
+                    encounter.register((MembersInjector<? super I>) this.logInjectorConstructor.newInstance(field));
+                } catch (Exception e) {
+                    throw new RuntimeException("Impossible to register '"
+                            + this.logInjectorConstructor.getName()
+                            + "' for field '"
+                            + field
+                            + "', see nested exception", e);
+                }
+            }
+        }
+
+        this.hear(klass.getSuperclass(), encounter);
     }
 
 }
