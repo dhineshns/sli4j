@@ -16,6 +16,7 @@
 package com.google.code.sli4j.core;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 import com.google.inject.MembersInjector;
 
@@ -45,6 +46,10 @@ public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
      * {@inheritDoc}
      */
     public final void injectMembers(Object target) {
+        if (Modifier.isFinal(this.field.getModifiers())) {
+            return;
+        }
+
         boolean wasAccessible = this.field.isAccessible();
         this.field.setAccessible(true);
         try {
