@@ -57,20 +57,27 @@ public class AbstractLoggingModule<L> extends TypeLiteral<L> implements Module, 
      * @param matcher
      * @param logInjectorClass
      */
-    public <LI extends AbstractLoggerInjector<L>> AbstractLoggingModule(Matcher<? super TypeLiteral<?>> matcher, Class<LI> logInjectorClass) {
+    public <LI extends AbstractLoggerInjector<L>> AbstractLoggingModule(Matcher<? super TypeLiteral<?>> matcher, Class<LI> loggerInjectorClass) {
+        if (matcher == null) {
+            throw new IllegalArgumentException("Parameter 'matcher' must nor be null");
+        }
+        if (loggerInjectorClass == null) {
+            throw new IllegalArgumentException("Parameter 'loggerInjectorClass' must nor be null");
+        }
+
         this.matcher = matcher;
         this.loggerClass = MoreTypes.getRawType(this.getType());
         try {
-            this.logInjectorConstructor = logInjectorClass.getConstructor(Field.class);
+            this.logInjectorConstructor = loggerInjectorClass.getConstructor(Field.class);
         } catch (SecurityException e) {
             throw new RuntimeException("Impossible to access to '"
-                    + logInjectorClass.getName()
+                    + loggerInjectorClass.getName()
                     + "("
                     + Field.class.getName()
                     + ")' public constructor due to security violation", e);
         } catch (NoSuchMethodException e) {
             throw new RuntimeException("Class '"
-                    + logInjectorClass.getName()
+                    + loggerInjectorClass.getName()
                     + "' doesn't have a public construcor with <"
                     + Field.class.getName()
                     + "> parameter type", e);
@@ -91,13 +98,6 @@ public class AbstractLoggingModule<L> extends TypeLiteral<L> implements Module, 
         this.hear(type.getRawType(), encounter);
     }
 
-    /**
-     * 
-     *
-     * @param <I>
-     * @param klass
-     * @param encounter
-     */
     @SuppressWarnings("unchecked")
     private <I> void hear(Class<?> klass, TypeEncounter<I> encounter) {
         if (Object.class == klass) {
