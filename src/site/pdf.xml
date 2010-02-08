@@ -65,6 +65,7 @@
         <coverType>User Guide</coverType>
         <projectName>${project.name}</projectName>
         <author>The sli4j Team</author>
+        <companyLogo>images/logo.png</companyLogo>
         <authors>
             <author>
                 <name>Simone Tripodi</name>
