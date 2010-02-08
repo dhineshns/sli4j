@@ -28,34 +28,41 @@ import com.google.inject.spi.TypeEncounter;
 import com.google.inject.spi.TypeListener;
 
 /**
- * 
+ * Abstract module implementation of Logging module that simplifies Logger
+ * building and injection.
  *
+ * Subclasses have to specify the Logger and the relative
+ * {@link AbstractLoggerInjector} types.
+ *
+ * @param <L> the Logger type has to be injected.
  * @author Simone Tripodi
  * @version $Id$
  */
 public class AbstractLoggingModule<L> extends TypeLiteral<L> implements Module, TypeListener {
 
     /**
-     * 
+     * The types matcher for whom the Logger injection has to be performed.
      */
     private final Matcher<? super TypeLiteral<?>> matcher;
 
     /**
-     * 
+     * The concrete Logger type.
      */
     private final Class<?> loggerClass;
 
     /**
-     * 
+     * The {@link AbstractLoggerInjector} constructor, instances will be created
+     * at runtime.
      */
     private final Constructor<? extends MembersInjector<L>> logInjectorConstructor;
 
     /**
-     * 
+     * Creates a new Logger injection module.
      *
-     * @param <LI>
-     * @param matcher
-     * @param logInjectorClass
+     * @param <LI> the concrete {@link AbstractLoggerInjector} 
+     * @param matcher types matcher for whom the Logger injection has to be
+     *        performed.
+     * @param logInjectorClass the {@link AbstractLoggerInjector} constructor.
      */
     public <LI extends AbstractLoggerInjector<L>> AbstractLoggingModule(Matcher<? super TypeLiteral<?>> matcher, Class<LI> loggerInjectorClass) {
         if (matcher == null) {

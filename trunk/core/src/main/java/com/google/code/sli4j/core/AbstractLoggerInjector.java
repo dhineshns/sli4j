@@ -21,7 +21,8 @@ import java.lang.reflect.Modifier;
 import com.google.inject.MembersInjector;
 
 /**
- * 
+ * The abstract Logger injector implementation, takes care of injecting the
+ * concrete Logger implementation to the logged filed.
  *
  * @author Simone Tripodi
  * @version $Id$
@@ -34,7 +35,7 @@ public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
     private final Field field;
 
     /**
-     * 
+     * Creates a new Logger injector.
      *
      * @param field the logger field has to be injected.
      */
@@ -66,9 +67,9 @@ public abstract class AbstractLoggerInjector<L> implements MembersInjector<L> {
     }
 
     /**
-     * 
+     * Creates a new Logger implementation for the specified Class.
      *
-     * @return
+     * @return a new Logger implementation.
      */
     protected abstract L createLogger(Class<?> klass);
 

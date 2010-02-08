@@ -22,13 +22,19 @@ import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
 
 /**
- * 
+ * {@code SLF4J - Apache Commons Logging} logger module implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
 public final class Slf4jJclLoggingModule extends AbstractLoggingModule<Logger> {
 
+    /**
+     * Creates a new {@code SLF4J - Apache Commons Logging} injection module.
+     *
+     * @param matcher types matcher for whom the Logger injection has to be
+     *        performed.
+     */
     public Slf4jJclLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
         super(matcher, Slf4jJclLoggerInjector.class);
     }

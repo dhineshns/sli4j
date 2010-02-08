@@ -23,15 +23,23 @@ import org.slf4j.impl.SimpleLoggerFactory;
 import com.google.code.sli4j.core.AbstractLoggerInjector;
 
 /**
- * 
+ * {@code SLF4J - Simple} logger injector implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
 public final class Slf4jSimpleLoggerInjector extends AbstractLoggerInjector<Logger> {
 
+    /**
+     * The {@code SLF4J - Simple} logger factory.
+     */
     private static final SimpleLoggerFactory LOGGER_FACTORY = new SimpleLoggerFactory();
 
+    /**
+     * Creates a new {@code SLF4J - Simple} Logger injector.
+     *
+     * @param field the logger field has to be injected.
+     */
     public Slf4jSimpleLoggerInjector(Field field) {
         super(field);
     }
