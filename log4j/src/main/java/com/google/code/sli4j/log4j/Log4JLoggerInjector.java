@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
 import com.google.code.sli4j.core.AbstractLoggerInjector;
 
 /**
- * 
+ * {@code Apache Log4j} logger injector implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
@@ -30,9 +30,9 @@ import com.google.code.sli4j.core.AbstractLoggerInjector;
 public final class Log4JLoggerInjector extends AbstractLoggerInjector<Logger> {
 
     /**
-     * 
+     * Creates a new {@code Apache Log4j} Logger injector.
      *
-     * @param field
+     * @param field the logger field has to be injected.
      */
     public Log4JLoggerInjector(Field field) {
         super(field);

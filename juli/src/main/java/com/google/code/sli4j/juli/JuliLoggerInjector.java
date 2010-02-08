@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 import com.google.code.sli4j.core.AbstractLoggerInjector;
 
 /**
- * 
+ * {@code java.util.logging.Logger} logger injector implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
@@ -29,9 +29,9 @@ import com.google.code.sli4j.core.AbstractLoggerInjector;
 public final class JuliLoggerInjector extends AbstractLoggerInjector<Logger> {
 
     /**
-     * 
+     * Creates a new {@code java.util.logging.Logger} Logger injector.
      *
-     * @param field
+     * @param field the logger field has to be injected.
      */
     public JuliLoggerInjector(Field field) {
         super(field);

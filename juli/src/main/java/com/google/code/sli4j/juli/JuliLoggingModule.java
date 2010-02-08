@@ -22,13 +22,19 @@ import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
 
 /**
- * 
+ * {@code java.util.logging.Logger} logger module implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
 public final class JuliLoggingModule extends AbstractLoggingModule<Logger> {
 
+    /**
+     * Creates a new {@code java.util.logging.Logger} injection module.
+     *
+     * @param matcher types matcher for whom the Logger injection has to be
+     *        performed.
+     */
     public JuliLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
         super(matcher, JuliLoggerInjector.class);
     }

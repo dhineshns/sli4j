@@ -22,13 +22,19 @@ import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
 
 /**
- * 
+ * {@code Apache Commons Logging} logger module implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
 public final class ACLLoggingModule extends AbstractLoggingModule<Log> {
 
+    /**
+     * Creates a new {@code Apache Commons Logging} injection module.
+     *
+     * @param matcher types matcher for whom the Logger injection has to be
+     *        performed.
+     */
     public ACLLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
         super(matcher, ACLLoggerInjector.class);
     }

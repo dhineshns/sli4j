@@ -24,15 +24,23 @@ import org.slf4j.impl.StaticLoggerBinder;
 import com.google.code.sli4j.core.AbstractLoggerInjector;
 
 /**
- * 
+ * {@code SLF4J - Logback} logger injector implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
 public final class Slf4jLogbackLoggerInjector extends AbstractLoggerInjector<Logger> {
 
+    /**
+     * The {@code SLF4J - Logback} logger factory.
+     */
     private static final ILoggerFactory LOGBACK_LOG_FACTORY = StaticLoggerBinder.getSingleton().getLoggerFactory();
 
+    /**
+     * Creates a new {@code SLF4J - Logback} Logger injector.
+     *
+     * @param field the logger field has to be injected.
+     */
     public Slf4jLogbackLoggerInjector(Field field) {
         super(field);
     }

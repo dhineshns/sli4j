@@ -23,15 +23,23 @@ import org.slf4j.impl.JDK14LoggerFactory;
 import com.google.code.sli4j.core.AbstractLoggerInjector;
 
 /**
- * 
+ * {@code SLF4J - JDK 1.4 Logging} logger injector implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
 public final class Slf4jJdk14LoggerInjector extends AbstractLoggerInjector<Logger> {
 
+    /**
+     * The {@code SLF4J - JDK 1.4 Logging} logger factory.
+     */
     private static final JDK14LoggerFactory JDK14_LOG_FACTORY = new JDK14LoggerFactory();
 
+    /**
+     * Creates a new {@code SLF4J - JDK 1.4 Logging} Logger injector.
+     *
+     * @param field the logger field has to be injected.
+     */
     public Slf4jJdk14LoggerInjector(Field field) {
         super(field);
     }

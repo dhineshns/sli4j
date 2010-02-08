@@ -23,13 +23,18 @@ import org.apache.commons.logging.LogFactory;
 import com.google.code.sli4j.core.AbstractLoggerInjector;
 
 /**
- * 
+ * {@code Apache Commons Logging} logger injector implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
 public final class ACLLoggerInjector extends AbstractLoggerInjector<Log> {
 
+    /**
+     * Creates a new {@code Apache Commons Logging} Logger injector.
+     *
+     * @param field the logger field has to be injected.
+     */
     public ACLLoggerInjector(Field field) {
         super(field);
     }

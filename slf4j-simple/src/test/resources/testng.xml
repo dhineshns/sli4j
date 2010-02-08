@@ -22,4 +22,10 @@
 -->
 <suite name="sli4j-slf4j-simple">
 
+    <test name="log-injection">
+        <classes>
+            <class name="com.google.code.sli4j.slf4j.simple.Slf4jSimpleLoggingTestCase"/>
+        </classes>
+    </test>
+
 </suite>

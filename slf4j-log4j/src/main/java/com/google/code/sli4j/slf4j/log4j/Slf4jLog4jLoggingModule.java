@@ -22,13 +22,19 @@ import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
 
 /**
- * 
+ * {@code SLF4J - Apache Log4j} logger module implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
 public final class Slf4jLog4jLoggingModule extends AbstractLoggingModule<Logger> {
 
+    /**
+     * Creates a new {@code SLF4J - Apache Log4j} injection module.
+     *
+     * @param matcher types matcher for whom the Logger injection has to be
+     *        performed.
+     */
     public Slf4jLog4jLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
         super(matcher, Slf4jLog4jLoggerInjector.class);
     }

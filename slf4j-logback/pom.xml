@@ -55,6 +55,20 @@
             <version>0.9.18</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.code.sli4j</groupId>
+            <artifactId>sli4j-testfw</artifactId>
+            <version>${parent.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.sli4j</groupId>
+            <artifactId>sli4j-testfw</artifactId>
+            <version>${parent.version}</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <reporting>
