@@ -15,7 +15,7 @@
  */
 
 /**
- * FIXME Add JavaDoc
+ * <code>java.util.logging.Logger</code> injection implementation.
  *
  * @author Marco Speranza
  * @version $Id: package-info.java 1 2010-01-12 22:50:37Z marco.speranza79 $

@@ -15,7 +15,7 @@
  */
 
 /**
- * FIXME Add JavaDoc
+ * Contains a mini-test framework shared between all the modules.
  *
  * @author Marco Speranza
  * @version $Id: package-info.java 1 2010-01-12 22:50:37Z marco.speranza79 $
