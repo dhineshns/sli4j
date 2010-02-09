@@ -15,7 +15,7 @@
  */
 
 /**
- * FIXME Add JavaDoc
+ * Apache Commons-Logging injection implementation.
  *
  * @author Marco Speranza
  * @version $Id$

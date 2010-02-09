@@ -15,7 +15,7 @@
  */
 
 /**
- * FIXME Add JavaDoc
+ * SLF4J-Logback injection implementation.
  *
  * @author Marco Speranza
  * @version $Id: package-info.java 1 2010-01-12 22:50:37Z marco.speranza79 $
