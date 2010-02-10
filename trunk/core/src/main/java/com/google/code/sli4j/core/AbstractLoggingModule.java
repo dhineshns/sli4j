@@ -66,10 +66,10 @@ public class AbstractLoggingModule<L> extends TypeLiteral<L> implements Module, 
      */
     public <LI extends AbstractLoggerInjector<L>> AbstractLoggingModule(Matcher<? super TypeLiteral<?>> matcher, Class<LI> loggerInjectorClass) {
         if (matcher == null) {
-            throw new IllegalArgumentException("Parameter 'matcher' must nor be null");
+            throw new IllegalArgumentException("Parameter 'matcher' must not be null");
         }
         if (loggerInjectorClass == null) {
-            throw new IllegalArgumentException("Parameter 'loggerInjectorClass' must nor be null");
+            throw new IllegalArgumentException("Parameter 'loggerInjectorClass' must not be null");
         }
 
         this.matcher = matcher;
