@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="sli4j">
+  <bannerLeft>
+    <name>Simple Logging Injector for Java</name>
+    <src>images/logo.png</src>
+    <href>http://sli4j.googlecode.com/svn/site/1.0/index.html</href>
+  </bannerLeft>
+  <version position="left" />
+  <skin>
+    <groupId>com.fluido</groupId>
+    <artifactId>fluido-skin</artifactId>
+    <version>1.1</version>
+  </skin>
+  <body>
+    <menu name="sli4j">
+      <item name="Home" href="index.html" />
+      <item name="JULI" href="juli.html" />
+      <item name="Apache Commons Logging" href="acl.html" />
+      <item name="Apache log4j" href="log4j.html" />
+      <item name="Simple Logging Facade for Java" href="slf4j.html" />
+      <item name="Extend sli4j" href="extend.html" />
+    </menu>
+    <menu name="Miscellaneous">
+      <item name="Project stats" href="stats.html" />
+      <item name="PDF Manual" href="sli4j-1.0.pdf" />
+    </menu>
+    <menu ref="reports" />
+    <menu name="Modules" ref="modules">
+      <item name="Core" href="sli4j-core/index.html" />
+      <item name="slf4j Test framework" href="sli4j-testfw/index.html" />
+      <item name="JULI" href="sli4j-juli/index.html" />
+      <item name="Apache Commons Logging" href="sli4j-acl/index.html" />
+      <item name="Apache Log4j" href="sli4j-log4j/index.html" />
+      <item name="slf4j-slf4j" href="sli4j-slf4j/index.html" />
+      <item name="slf4j-nop" href="sli4j-slf4j-nop/index.html" />
+      <item name="slf4j-simple" href="sli4j-slf4j-simple/index.html" />
+      <item name="slf4j-jcl" href="sli4j-slf4j-jcl/index.html" />
+      <item name="slf4j-jdk14" href="sli4j-slf4j-jdk14/index.html" />
+      <item name="slf4j-log4j" href="sli4j-slf4j-log4j/index.html" />
+      <item name="slf4j-logback" href="sli4j-slf4j-logback/index.html" />
+    </menu>
+    <menu name="External Links">
+      <item name="Project Page" href="http://code.google.com/p/ibaguice/" />
+      <item name="Google Guice" href="http://code.google.com/p/google-guice/" />
+    </menu>
+  </body>
+</project>
