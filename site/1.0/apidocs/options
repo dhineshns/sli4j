@@ -1,0 +1,24 @@
+-classpath
+'/Users/simone/Documents/workspace-private/sli4j-parent/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/core/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/testframework/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/juli/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/commons-logging/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/log4j/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-nop/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-simple/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-jcl/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-jdk14/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-log4j/target/classes:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-logback/target/classes:/Users/simone/.m2/repository/log4j/log4j/1.2.15/log4j-1.2.15.jar:/Users/simone/.m2/repository/ch/qos/logback/logback-core/0.9.18/logback-core-0.9.18.jar:/Users/simone/.m2/repository/org/slf4j/slf4j-jdk14/1.5.10/slf4j-jdk14-1.5.10.jar:/Users/simone/.m2/repository/org/slf4j/slf4j-nop/1.5.10/slf4j-nop-1.5.10.jar:/Users/simone/.m2/repository/com/google/inject/guice/2.0/guice-2.0.jar:/Users/simone/.m2/repository/org/slf4j/slf4j-jcl/1.5.10/slf4j-jcl-1.5.10.jar:/Users/simone/.m2/repository/org/slf4j/slf4j-api/1.5.10/slf4j-api-1.5.10.jar:/Users/simone/.m2/repository/org/slf4j/slf4j-simple/1.5.10/slf4j-simple-1.5.10.jar:/Users/simone/.m2/repository/com/google/code/sli4j/sli4j-core/1.0/sli4j-core-1.0.jar:/Users/simone/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar:/Users/simone/.m2/repository/ch/qos/logback/logback-classic/0.9.18/logback-classic-0.9.18.jar:/Users/simone/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/simone/.m2/repository/org/slf4j/slf4j-log4j12/1.5.10/slf4j-log4j12-1.5.10.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'/Users/simone/Documents/workspace-private/sli4j-parent/core/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/testframework/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/juli/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/commons-logging/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/log4j/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-nop/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-simple/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-jcl/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-jdk14/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-log4j/src/main/java:/Users/simone/Documents/workspace-private/sli4j-parent/slf4j-logback/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2010. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/simone/Documents/workspace-private/sli4j-parent/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'sli4j 1.0 API'
+-link
+'http://java.sun.com/j2se/1.5.0/docs/api'
+-use
+-version
+-windowtitle
+'sli4j 1.0 API'

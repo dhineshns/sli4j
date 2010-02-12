@@ -1,0 +1,12 @@
+com.google.code.sli4j.core
+com.google.code.sli4j.testfw
+com.google.code.sli4j.juli
+com.google.code.sli4j.acl
+com.google.code.sli4j.log4j
+com.google.code.sli4j.slf4j
+com.google.code.sli4j.slf4j.nop
+com.google.code.sli4j.slf4j.simple
+com.google.code.sli4j.slf4j.jcl
+com.google.code.sli4j.slf4j.jdk14
+com.google.code.sli4j.slf4j.log4j
+com.google.code.sli4j.slf4j.logback
