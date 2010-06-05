@@ -13,30 +13,36 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.juli;
+package com.googlecode.sli4j.juli;
 
+import java.lang.reflect.Field;
 import java.util.logging.Logger;
 
-import com.google.code.sli4j.core.AbstractLoggingModule;
-import com.google.inject.TypeLiteral;
-import com.google.inject.matcher.Matcher;
+import com.googlecode.sli4j.core.AbstractLoggerInjector;
 
 /**
- * {@code java.util.logging.Logger} logger module implementation.
+ * {@code java.util.logging.Logger} logger injector implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class JuliLoggingModule extends AbstractLoggingModule<Logger> {
+public final class JuliLoggerInjector extends AbstractLoggerInjector<Logger> {
 
     /**
-     * Creates a new {@code java.util.logging.Logger} injection module.
+     * Creates a new {@code java.util.logging.Logger} Logger injector.
      *
-     * @param matcher types matcher for whom the Logger injection has to be
-     *        performed.
+     * @param field the logger field has to be injected.
      */
-    public JuliLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, JuliLoggerInjector.class);
+    public JuliLoggerInjector(Field field) {
+        super(field);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    protected Logger createLogger(Class<?> klass) {
+        return Logger.getLogger(klass.getName());
     }
 
 }
