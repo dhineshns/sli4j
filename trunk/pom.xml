@@ -29,7 +29,7 @@
     <version>2.0-SNAPSHOT</version>
     <name>sli4j</name>
     <description>Simple Logging Injector for Java</description>
-    <url>http://code.google.com/p/sli4j</url>
+    <url>http://www.99soft.org/projects/sli4j/${project.version}</url>
 
     <licenses>
         <license>
