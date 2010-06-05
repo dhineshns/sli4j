@@ -39,14 +39,14 @@
         <dependency>
             <groupId>com.googlecode.sli4j</groupId>
             <artifactId>sli4j-core</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>com.googlecode.sli4j</groupId>
             <artifactId>sli4j-testfw</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
