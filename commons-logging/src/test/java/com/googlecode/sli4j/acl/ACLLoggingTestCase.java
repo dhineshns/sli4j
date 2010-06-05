@@ -13,30 +13,35 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.acl;
+package com.googlecode.sli4j.acl;
 
 import org.apache.commons.logging.Log;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-import com.google.code.sli4j.core.AbstractLoggingModule;
 import com.google.inject.TypeLiteral;
-import com.google.inject.matcher.Matcher;
+import com.google.inject.matcher.Matchers;
+import com.googlecode.sli4j.acl.ACLLoggingModule;
+import com.googlecode.sli4j.testfw.AbstractLoggerInectionTestCase;
 
 /**
- * {@code Apache Commons Logging} logger module implementation.
+ * 
  *
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class ACLLoggingModule extends AbstractLoggingModule<Log> {
+public final class ACLLoggingTestCase extends AbstractLoggerInectionTestCase<Log> {
 
-    /**
-     * Creates a new {@code Apache Commons Logging} injection module.
-     *
-     * @param matcher types matcher for whom the Logger injection has to be
-     *        performed.
-     */
-    public ACLLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, ACLLoggerInjector.class);
+    private Log logger;
+
+    @BeforeTest
+    public void setUp() {
+        super.setUp(new ACLLoggingModule(Matchers.only(TypeLiteral.get(this.getClass()))));
+    }
+
+    @Test
+    public void injectAndVerify() {
+        this.injectAndVerify(this.logger);
     }
 
 }
