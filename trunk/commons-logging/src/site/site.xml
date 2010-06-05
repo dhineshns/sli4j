@@ -30,7 +30,7 @@
     <bannerLeft>
         <name>Simple Logging Injector for Java</name>
         <src>../images/logo.png</src>
-        <href>http://sli4j.googlecode.com/svn/site/${project.version}/index.html</href>
+        <href>${project.url}/index.html</href>
     </bannerLeft>
 
     <version position="left"/>
