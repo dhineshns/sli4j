@@ -24,7 +24,7 @@
 
     <test name="log-injection">
         <classes>
-            <class name="com.google.code.sli4j.log4j.Log4jLoggingTestCase"/>
+            <class name="com.googlecode.sli4j.log4j.Log4jLoggingTestCase"/>
         </classes>
     </test>
 

@@ -13,13 +13,13 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.log4j;
+package com.googlecode.sli4j.log4j;
 
 import java.lang.reflect.Field;
 
 import org.apache.log4j.Logger;
 
-import com.google.code.sli4j.core.AbstractLoggerInjector;
+import com.googlecode.sli4j.core.AbstractLoggerInjector;
 
 /**
  * {@code Apache Log4j} logger injector implementation.
