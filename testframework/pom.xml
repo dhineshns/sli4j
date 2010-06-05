@@ -32,7 +32,6 @@
     <groupId>com.googlecode.sli4j</groupId>
     <artifactId>sli4j-testfw</artifactId>
     <packaging>jar</packaging>
-    <version>${parent.version}</version>
     <name>slf4j Test framework</name>
     <description>Test framework for sli4j modules test</description>
 
