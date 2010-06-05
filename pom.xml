@@ -23,10 +23,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.google.code.sli4j</groupId>
+    <groupId>com.googlecode.sli4j</groupId>
     <artifactId>sli4j-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <name>sli4j</name>
     <description>Simple Logging Injector for Java</description>
     <url>http://code.google.com/p/sli4j</url>
@@ -175,7 +175,7 @@
                     <effort>Max</effort>
                     <visitors>FindDeadLocalStores</visitors>
                     <omitVisitors>FindDeadLocalStores</omitVisitors>
-                    <onlyAnalyze>com.google.code.sli4j.*</onlyAnalyze>
+                    <onlyAnalyze>com.googlecode.sli4j.*</onlyAnalyze>
                     <debug>true</debug>
                     <relaxed>true</relaxed>
                     <xmlOutputDirectory>target/findbugs-reports</xmlOutputDirectory>
