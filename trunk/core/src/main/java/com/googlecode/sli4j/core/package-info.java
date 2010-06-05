@@ -20,4 +20,4 @@
  * @author Marco Speranza
  * @version $Id: package-info.java 1 2010-01-12 22:50:37Z marco.speranza79 $
  */
-package com.google.code.sli4j.core;
+package com.googlecode.sli4j.core;
