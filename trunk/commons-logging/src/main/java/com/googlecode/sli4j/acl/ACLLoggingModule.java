@@ -13,38 +13,30 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.acl;
-
-import java.lang.reflect.Field;
+package com.googlecode.sli4j.acl;
 
 import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
-import com.google.code.sli4j.core.AbstractLoggerInjector;
+import com.google.inject.TypeLiteral;
+import com.google.inject.matcher.Matcher;
+import com.googlecode.sli4j.core.AbstractLoggingModule;
 
 /**
- * {@code Apache Commons Logging} logger injector implementation.
+ * {@code Apache Commons Logging} logger module implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class ACLLoggerInjector extends AbstractLoggerInjector<Log> {
+public final class ACLLoggingModule extends AbstractLoggingModule<Log> {
 
     /**
-     * Creates a new {@code Apache Commons Logging} Logger injector.
+     * Creates a new {@code Apache Commons Logging} injection module.
      *
-     * @param field the logger field has to be injected.
+     * @param matcher types matcher for whom the Logger injection has to be
+     *        performed.
      */
-    public ACLLoggerInjector(Field field) {
-        super(field);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected Log createLogger(Class<?> klass) {
-        return LogFactory.getLog(klass);
+    public ACLLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
+        super(matcher, ACLLoggerInjector.class);
     }
 
 }

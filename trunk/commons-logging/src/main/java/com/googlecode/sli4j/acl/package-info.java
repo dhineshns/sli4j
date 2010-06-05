@@ -20,4 +20,4 @@
  * @author Marco Speranza
  * @version $Id$
  */
-package com.google.code.sli4j.acl;
+package com.googlecode.sli4j.acl;
