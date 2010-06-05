@@ -13,38 +13,30 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.slf4j.nop;
-
-import java.lang.reflect.Field;
+package com.googlecode.sli4j.slf4j.nop;
 
 import org.slf4j.Logger;
-import org.slf4j.helpers.NOPLogger;
 
-import com.google.code.sli4j.core.AbstractLoggerInjector;
+import com.google.inject.TypeLiteral;
+import com.google.inject.matcher.Matcher;
+import com.googlecode.sli4j.core.AbstractLoggingModule;
 
 /**
- * {@code SLF4J - NOP} logger injector implementation.
+ * {@code SLF4J - NOP} logger module implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class Slf4jNopLoggerInjector extends AbstractLoggerInjector<Logger> {
+public final class Slf4jNopLoggingModule extends AbstractLoggingModule<Logger> {
 
     /**
-     * Creates a new {@code SLF4J - NOP} Logger injector.
+     * Creates a new {@code SLF4J - NOP} injection module.
      *
-     * @param field the logger field has to be injected.
+     * @param matcher types matcher for whom the Logger injection has to be
+     *        performed.
      */
-    public Slf4jNopLoggerInjector(Field field) {
-        super(field);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected Logger createLogger(Class<?> klass) {
-        return NOPLogger.NOP_LOGGER;
+    public Slf4jNopLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
+        super(matcher, Slf4jNopLoggerInjector.class);
     }
 
 }
