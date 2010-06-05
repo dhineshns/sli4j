@@ -13,38 +13,30 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.slf4j;
-
-import java.lang.reflect.Field;
+package com.googlecode.sli4j.slf4j;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import com.google.code.sli4j.core.AbstractLoggerInjector;
+import com.google.inject.TypeLiteral;
+import com.google.inject.matcher.Matcher;
+import com.googlecode.sli4j.core.AbstractLoggingModule;
 
 /**
- * {@code SLF4J} logger injector implementation.
+ * {@code SLF4J} logger module implementation.
  *
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class Slf4jLoggerInjector extends AbstractLoggerInjector<Logger> {
+public final class Slf4jLoggingModule extends AbstractLoggingModule<Logger> {
 
     /**
-     * Creates a new {@code SLF4J} Logger injector.
+     * Creates a new {@code SLF4J} injection module.
      *
-     * @param field the logger field has to be injected.
+     * @param matcher types matcher for whom the Logger injection has to be
+     *        performed.
      */
-    public Slf4jLoggerInjector(Field field) {
-        super(field);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected Logger createLogger(Class<?> klass) {
-        return LoggerFactory.getLogger(klass);
+    public Slf4jLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
+        super(matcher, Slf4jLoggerInjector.class);
     }
 
 }
