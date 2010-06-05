@@ -13,13 +13,13 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.slf4j.log4j;
+package com.googlecode.sli4j.slf4j.log4j;
 
 import org.slf4j.Logger;
 
-import com.google.code.sli4j.core.AbstractLoggingModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.matcher.Matcher;
+import com.googlecode.sli4j.core.AbstractLoggingModule;
 
 /**
  * {@code SLF4J - Apache Log4j} logger module implementation.
