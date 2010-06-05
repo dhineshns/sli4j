@@ -13,30 +13,35 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package com.google.code.sli4j.slf4j;
+package com.googlecode.sli4j.slf4j;
 
 import org.slf4j.Logger;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-import com.google.code.sli4j.core.AbstractLoggingModule;
 import com.google.inject.TypeLiteral;
-import com.google.inject.matcher.Matcher;
+import com.google.inject.matcher.Matchers;
+import com.googlecode.sli4j.slf4j.Slf4jLoggingModule;
+import com.googlecode.sli4j.testfw.AbstractLoggerInectionTestCase;
 
 /**
- * {@code SLF4J} logger module implementation.
+ * 
  *
  * @author Simone Tripodi
  * @version $Id$
  */
-public final class Slf4jLoggingModule extends AbstractLoggingModule<Logger> {
+public final class Slf4jLoggingTestCase extends AbstractLoggerInectionTestCase<Logger> {
 
-    /**
-     * Creates a new {@code SLF4J} injection module.
-     *
-     * @param matcher types matcher for whom the Logger injection has to be
-     *        performed.
-     */
-    public Slf4jLoggingModule(Matcher<? super TypeLiteral<?>> matcher) {
-        super(matcher, Slf4jLoggerInjector.class);
+    private Logger logger;
+
+    @BeforeTest
+    public void setUp() {
+        super.setUp(new Slf4jLoggingModule(Matchers.only(TypeLiteral.get(this.getClass()))));
+    }
+
+    @Test
+    public void injectAndVerify() {
+        this.injectAndVerify(this.logger);
     }
 
 }
