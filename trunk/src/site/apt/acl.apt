@@ -32,7 +32,7 @@ Apache Commons Logging
 
 ----------------------------------------
 <dependency>
-    <groupId>com.google.code.sli4j</groupId>
+    <groupId>com.googlecode.sli4j</groupId>
     <artifactId>sli4j-acl</artifactId>
     <version>XX.XX</version>
     <scope>compile</scope>
@@ -40,7 +40,7 @@ Apache Commons Logging
 ----------------------------------------
 
   then, when creating the <<<com.google.inject.Injector>>>, add the
-  <<<com.google.code.sli4j.acl.ACLLoggingModule>>> module; please take note
+  <<<com.googlecode.sli4j.acl.ACLLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:
 
@@ -48,7 +48,7 @@ Apache Commons Logging
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import com.google.code.sli4j.acl.ACLLoggingModule;
+import com.googlecode.sli4j.acl.ACLLoggingModule;
 import com.google.inject.matcher.Matchers;
 
 ...

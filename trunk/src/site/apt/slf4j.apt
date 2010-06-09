@@ -32,7 +32,7 @@ Simple Logging Facade for Java (SLF4J)
 
 ----------------------------------------
 <dependency>
-    <groupId>com.google.code.sli4j</groupId>
+    <groupId>com.googlecode.sli4j</groupId>
     <artifactId>sli4j-slf4j</artifactId>
     <version>XX.XX</version>
     <scope>compile</scope>
@@ -40,7 +40,7 @@ Simple Logging Facade for Java (SLF4J)
 ----------------------------------------
 
   then, when creating the <<<com.google.inject.Injector>>>, add the
-  <<<com.google.code.sli4j.slf4j.Slf4jLoggingModule>>> module; please take note
+  <<<com.googlecode.sli4j.slf4j.Slf4jLoggingModule>>> module; please take note
   that users have to specify the classes <<<com.google.inject.matcher.Matcher>>>
   for whom the logging injection has to be applied:
 
@@ -48,7 +48,7 @@ Simple Logging Facade for Java (SLF4J)
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-import com.google.code.sli4j.slf4j.Slf4jLoggingModule;
+import com.googlecode.sli4j.slf4j.Slf4jLoggingModule;
 import com.google.inject.matcher.Matchers;
 
 ...
@@ -70,15 +70,15 @@ Injector injector = Guice.createInjector(new Slf4jLoggingModule(Matchers.any()),
 *----------+--------------*----------------*----------------*
 || binding || groupId     || artifactId    || module class  |
 *----------+--------------*----------------*----------------*
-| nop | com.google.code.sli4j | sli4j-slf4j-nop | com.google.code.sli4j.slf4j.nop.Slf4jNopLoggingModule |
+| nop | com.googlecode.sli4j | sli4j-slf4j-nop | com.googlecode.sli4j.slf4j.nop.Slf4jNopLoggingModule |
 *----------+--------------*----------------*----------------*
-| simple | com.google.code.sli4j | sli4j-slf4j-simple | com.google.code.sli4j.slf4j.simple.Slf4jSimpleLoggingModule |
+| simple | com.googlecode.sli4j | sli4j-slf4j-simple | com.googlecode.sli4j.slf4j.simple.Slf4jSimpleLoggingModule |
 *----------+--------------*----------------*----------------*
-| log4j12 | com.google.code.sli4j | sli4j-slf4j-log4j | com.google.code.sli4j.slf4j.log4j.Slf4jLog4jLoggingModule |
+| log4j12 | com.googlecode.sli4j | sli4j-slf4j-log4j | com.googlecode.sli4j.slf4j.log4j.Slf4jLog4jLoggingModule |
 *----------+--------------*----------------*----------------*
-| jdk14 | com.google.code.sli4j | sli4j-slf4j-jdk14 | com.google.code.sli4j.slf4j.jdk14.Slf4jJdk14LoggingModule |
+| jdk14 | com.googlecode.sli4j | sli4j-slf4j-jdk14 | com.googlecode.sli4j.slf4j.jdk14.Slf4jJdk14LoggingModule |
 *----------+--------------*----------------*----------------*
-| jcl | com.google.code.sli4j | sli4j-slf4j-jcl | com.google.code.sli4j.slf4j.jcl.Slf4jJclLoggingModule |
+| jcl | com.googlecode.sli4j | sli4j-slf4j-jcl | com.googlecode.sli4j.slf4j.jcl.Slf4jJclLoggingModule |
 *----------+--------------*----------------*----------------*
-| logback | com.google.code.sli4j | sli4j-slf4j-logback | com.google.code.sli4j.slf4j.logback.Slf4jLogbackLoggingModule |
+| logback | com.googlecode.sli4j | sli4j-slf4j-logback | com.googlecode.sli4j.slf4j.logback.Slf4jLogbackLoggingModule |
 *----------+--------------*----------------*----------------*
