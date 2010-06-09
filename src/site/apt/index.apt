@@ -63,23 +63,6 @@ Logger logger;
   just declare it and let <sli4j> doing the rest, <<<final>>> and already set
   Loggers will be skipped and <sli4j> won't try to override them at all.
 
-Before Coding...
-
-  To set up your project, configure in your pom.xml the <<<repository>>>:
-
-----------------------------------------
-<repositories>
-    ...
-    <repository>
-        <id>sli4j-repository</id>
-        <name>sli4j Repository for Maven</name>
-        <url>http://sli4j.googlecode.com/svn/repo</url>
-        <layout>default</layout>
-    </repository>
-    ...
-</repositories>
-----------------------------------------
-
 Acknowledgements
 
   This work is dedicated to our city, L'Aquila, destroyed by a terrible
